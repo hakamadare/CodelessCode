@@ -1,5 +1,10 @@
-Test::Base
-YAML
+CHI
 Dancer
+Data::Dumper
+HTML::TokeParser
+LWP::UserAgent
 Plack::Handler::Apache2
-
+Readonly
+Test::Base
+URI
+YAML

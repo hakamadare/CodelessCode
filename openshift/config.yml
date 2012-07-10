@@ -27,3 +27,6 @@ template: "simple"
 #     start_tag: '[%'
 #     end_tag:   '%]'
 
+# CodelessCode config
+base_url: "http://thecodelesscode.com"
+cache_duration: "1h"

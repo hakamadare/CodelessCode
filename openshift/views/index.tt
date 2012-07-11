@@ -9,7 +9,6 @@
     See Ruby on Rails if you want a kickass framework in Ruby:
     http://www.rubyonrails.org/
 -->
-
 <div id="page">
       <div id="content">
         <div id="header">
@@ -18,7 +17,7 @@
         </div>
 
         <div id="body">
-          <code>$ curl 'http://codelesscode-vecna.rhcloud.com/koan/1.json'</code><br/>
+          <code>$ curl '<% request.uri_base %>/koan/1.json'</code><br/>
           <pre>
 {
    "geekiness" : "not",
@@ -28,7 +27,7 @@
    "words" : "155"
 }</pre><br/>
           <br/>
-          <code>$ curl 'http://codelesscode-vecna.rhcloud.com/koan/1.yml'</code><br/>
+          <code>$ curl '<% request.uri_base %>/koan/1.yml'</code><br/>
           <pre>
 ---
 date: 08 July 2012

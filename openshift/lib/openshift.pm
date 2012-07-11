@@ -1,6 +1,8 @@
 package openshift;
 use Dancer ':syntax';
-set serializer => 'Mutable';
+use Dancer::Plugin::REST;
+
+prepare_serializer_for_format;
 
 use CHI;
 use Data::Dumper;
@@ -37,12 +39,8 @@ get '/clear' => sub {
     $cache->clear;
 };
 
-get qr{/(\d+)} => sub {
-    my( $number ) = splat;
-    debug( "\$number: $number\n" );
-    my( $koan ) = vars->{koans}->{number}->{$number};
-    debug( Data::Dumper->Dump( [$koan], [qw(*koan)] ) );
-    return( $koan );
+get '/koan/:number.:format' => sub {
+    vars->{koans}->{number}->{params->{number}};
 };
 
 sub getKoans {

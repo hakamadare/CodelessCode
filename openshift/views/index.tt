@@ -11,138 +11,61 @@
 -->
 
 <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-
-              <li><a href="http://perldancer.org/">PerlDancer</a></li>
-              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
-              <li><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Browse the documentation</h3>
-
-            <ul class="links">
-              <li><a
-              href="http://search.cpan.org/dist/Dancer/lib/Dancer/Introduction.pod">Introduction</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
-              <li><a
-              href="http://search.cpan.org/dist/Dancer/lib/Dancer/Tutorial.pod"
-              title="a tutorial to build a small blog engine with Dancer">Tutorial</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <h3>Your application's environment</h3>
-
-            <ul>
-                <li>Location: <code>~/shiftapps/dancer/openshift</code></li>
-                <li>Template engine: <code><% settings.template %></code></li>
-                <li>Logger: <code><% settings.logger %></code></li>
-                <li>Environment: <code><% settings.environment %></code></li>
-            </ul>
-
-          </li>
-        </ul>
-
-      </div>
-
       <div id="content">
         <div id="header">
-          <h1>Perl is dancing</h1>
-          <h2>You&rsquo;ve joined the dance floor!</h2>
+          <h1>CodelessCode</h1>
+          <h2>a RESTful API for The Codeless Code</h2>
         </div>
 
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get dancing:</h2>
-                    
-          <h3><a href="#" id="about_env_link">About your application's environment</a></h3>
+        <div id="body">
+          <code>$ curl 'http://codelesscode-vecna.rhcloud.com/koan/1.json'</code><br/>
+          <pre>
+{
+   "geekiness" : "not",
+   "text" : "\n For three days and nights the Java master did not emerge\nfrom his cubicle.  On the fourth day the monks of the temple\nsent a novice to inquire after him. \n\n[IMG]\n\n The novice found the master at his whiteboard, contemplating\na single dataflow diagram.  The novice recognized it as a\nminor component of the vast system that the monks were\ncontracted to maintain.  Politely, the novice asked what the\nmaster was working on. \n\n The master replied: “There is a defect, and I am considering\nthe best way to repair it.” \n\n The novice said, “You preach often about the importance of\nsetting priorities.  How, then, can you obsess about\nsomething so tiny and unimportant?” \n\n Without saying a word, the master raised his staff and\nbrought it down hard upon the bare left foot of the novice,\nbreaking his smallest toe.  The novice screamed in pain and\nstaggered from the cubicle.  In that moment, the novice was\nenlightened.\n \n\n\n",
+   "date" : "08 July 2012",
+   "title" : "The Small Stuff",
+   "words" : "155"
+}</pre><br/>
+          <br/>
+          <code>$ curl 'http://codelesscode-vecna.rhcloud.com/koan/1.yml'</code><br/>
+          <pre>
+---
+date: 08 July 2012
+geekiness: not
+text: |+2
 
-          <div id="about-content" style="display: none;">
-            <table>
-                <tbody>
-                <tr>
-                    <td>Perl version</td>
-                    <td><tt><% perl_version %></tt></td>
-                </tr>
-                <tr>
-                    <td>Dancer version</td>
-                    <td><tt><% dancer_version %></tt></td>
-                </tr>
-                <tr>
-                    <td>Backend</td>
-                    <td><tt><% settings.apphandler %></tt></td>
-                </tr>
-                <tr>
-                    <td>Appdir</td>
-                    <td><tt>~/shiftapps/dancer/openshift</tt></td>
-                </tr>
-                <tr>
-                    <td>Template engine</td>
-                    <td><tt><% settings.template %></tt></td>
-                </tr>
-                <tr>
-                    <td>Logger engine</td>
-                    <td><tt><% settings.logger %></tt></td>
-                </tr>
-                <tr>
-                    <td>Running environment</td>
-                    <td><tt><% settings.environment %></tt></td>
-                </tr>
-                </tbody>
-            </table>
-          </div>
+ For three days and nights the Java master did not emerge
+from his cubicle.  On the fourth day the monks of the temple
+sent a novice to inquire after him. 
 
-    <script type="text/javascript">
-    $('#about_env_link').click(function() {
-        $('#about-content').slideToggle('fast', function() {
-            // ok
-        });
-        return( false );
-    });
-    </script>
+[IMG]
+
+ The novice found the master at his whiteboard, contemplating
+a single dataflow diagram.  The novice recognized it as a
+minor component of the vast system that the monks were
+contracted to maintain.  Politely, the novice asked what the
+master was working on. 
+
+ The master replied: “There is a defect, and I am considering
+the best way to repair it.” 
+
+ The novice said, “You preach often about the importance of
+setting priorities.  How, then, can you obsess about
+something so tiny and unimportant?” 
+
+ Without saying a word, the master raised his staff and
+brought it down hard upon the bare left foot of the novice,
+breaking his smallest toe.  The novice screamed in pain and
+staggered from the cubicle.  In that moment, the novice was
+enlightened.
+ 
 
 
-          <ol>          
-            <li>
-              <h2>Tune your application</h2>
-
-              <p>
-              Your application is configured via a global configuration file,
-              <tt>config.yml</tt> and an "environment" configuration file,
-              <tt>environments/development.yml</tt>. Edit those files if you
-              want to change the settings of your application.
-              </p>
-            </li>
-
-            <li>
-              <h2>Add your own routes</h2>
-
-              <p>
-              The default route that displays this page can be removed,
-              it's just here to help you get started. The template used to
-              generate this content is located in 
-              <code>views/index.tt</code>.
-              You can add some routes to <tt>lib/openshift.pm</tt>. 
-              </p>
-            </li>
-
-            <li>
-                <h2>Enjoy web development again</h2>
-
-                <p>
-                Once you've made your changes, restart your standalone server
-                (bin/app.pl) and you're ready to test your web application.
-                </p>
-            </li>
-
-          </ol>
+title: The Small Stuff
+words: 155</pre><br/>
         </div>
+
       </div>
     </div>
+</div>

@@ -1,5 +1,6 @@
 CHI
 Dancer
+Dancer::Plugin::REST
 Data::Dumper
 HTML::TokeParser
 LWP::UserAgent

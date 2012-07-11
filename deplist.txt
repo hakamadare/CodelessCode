@@ -7,4 +7,5 @@ Plack::Handler::Apache2
 Readonly
 Test::Base
 URI
+XML::Simple
 YAML

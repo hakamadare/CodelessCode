@@ -21,7 +21,14 @@
           <pre>
 {
    "geekiness" : "not",
-   "text" : "\n For three days and nights the Java master did not emerge\nfrom his cubicle.  On the fourth day the monks of the temple\nsent a novice to inquire after him. \n\n[IMG]\n\n The novice found the master at his whiteboard, contemplating\na single dataflow diagram.  The novice recognized it as a\nminor component of the vast system that the monks were\ncontracted to maintain.  Politely, the novice asked what the\nmaster was working on. \n\n The master replied: “There is a defect, and I am considering\nthe best way to repair it.” \n\n The novice said, “You preach often about the importance of\nsetting priorities.  How, then, can you obsess about\nsomething so tiny and unimportant?” \n\n Without saying a word, the master raised his staff and\nbrought it down hard upon the bare left foot of the novice,\nbreaking his smallest toe.  The novice screamed in pain and\nstaggered from the cubicle.  In that moment, the novice was\nenlightened.\n \n\n\n",
+   "text" : "\n For three days and nights the Java master did not emerge\nfrom his cubicle.  On the fourth day the monks of the temple\n
+   sent a novice to inquire after him. \n\n[IMG]\n\n The novice found the master at his whiteboard, contemplating\na single dataflow
+   diagram.  The novice recognized it as a\nminor component of the vast system that the monks were\ncontracted to maintain.  Politely, the
+   novice asked what the\nmaster was working on. \n\n The master replied: “There is a defect, and I am considering\nthe best way to repair
+   it.” \n\n The novice said, “You preach often about the importance of\nsetting priorities.  How, then, can you obsess about\nsomething so
+   tiny and unimportant?” \n\n Without saying a word, the master raised his staff and\nbrought it down hard upon the bare left foot of the
+   novice,\nbreaking his smallest toe.  The novice screamed in pain and\nstaggered from the cubicle.  In that moment, the novice
+   was\nenlightened.\n \n\n\n",
    "date" : "08 July 2012",
    "title" : "The Small Stuff",
    "words" : "155"

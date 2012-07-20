@@ -210,7 +210,7 @@ sub getKoanContent {
                 debug( "Found the koan.\n" );
 
                 # $content->{text} = $parser->get_trimmed_text( "/div" );
-                $content->{text} = $parser->get_text( "/div" );
+                $content->{text} = sanitizeKoan( $parser->get_text( "/div" ) );
             }
             elsif ( $divattr->{class} eq "signature" ) {
                 debug( "Found the signature.\n" );
@@ -229,6 +229,38 @@ sub getKoanContent {
     debug( "Leaving getKoanContent.\n" );
 
     return( $content );
+}
+
+sub sanitizeKoan {
+    my( $raw ) = @_;
+
+    debug( "Entering sanitizeKoan" );
+
+    my( @lines ) = split( "\n\n+", $raw );
+    debug( "Found " . scalar( @lines ) . " lines of raw koan" );
+    my( $cooked ) = '';
+
+    while ( @lines ) {
+        my $line = shift( @lines );
+        chomp( $line );
+        debug( "Sanitizing '$line'" );
+        # eliminate internal newlines
+        $line =~ s/\n+/ /g;
+        if ( $line !~ /\[IMG\]/ ) {
+            # strip the IMG placeholders
+            debug( "Capturing '$line'" );
+            $cooked .= "$line\n\n";
+        }
+    }
+
+    # final cleanup
+    chomp( $cooked );
+    $cooked =~ s/\s+$//;
+
+    debug( "Leaving sanitizeKoan" );
+
+    return( $cooked );
+
 }
 
 true;

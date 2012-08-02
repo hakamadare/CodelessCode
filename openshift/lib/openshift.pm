@@ -113,7 +113,19 @@ sub getKoans {
                     }
 
                     while( my $row = $parser->get_tag( "tr" ) ) {
+                    #while( my( $row, $rowattr ) = getElement( $parser, "tr" ) ) {
                         my( $number, $title, $geekiness ) = ( 0, '', 'not' );
+
+                        # while( my $cell = $parser->get_tag( "td" ) ) {
+                        #     my( $cellattr ) = $cell->[1];
+                        #     my( $cellclass ) = $cellattr->{class};
+                        #     if ( defined( $class ) ) {
+                        #         # is the koan illustrated?
+                        #         if ( $class eq "toc-illus" ) {
+
+                        #     }
+                        #     
+                        # }
 
                         while( my $candidate = $parser->get_tag( "span", "a" ) ) {
                             my( $candidatetype, $candidateattr ) = ( $candidate->[0], $candidate->[1] );
@@ -172,6 +184,17 @@ sub getKoans {
     debug( "Leaving getKoans.\n" );
 
     return( $koans );
+}
+
+sub getElement {
+    my( $parser, @elements ) = @_;
+
+    my( $element ) = $parser->get_tag( @elements );
+    if ( defined( $element ) ) {
+        my( $tag, $attr, $attrseq, $text ) = @{$element};
+
+        return( $tag, $attr );
+    }
 }
 
 sub getKoanContent {
@@ -244,6 +267,8 @@ sub sanitizeKoan {
         my $line = shift( @lines );
         chomp( $line );
         debug( "Sanitizing '$line'" );
+        # eliminate leading whitespace
+        $line =~ s/^\s+//;
         # eliminate internal newlines
         $line =~ s/\n+/ /g;
         if ( $line !~ /\[IMG\]/ ) {
